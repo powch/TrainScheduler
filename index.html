@@ -1,63 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Train Scheduler</title>
-    <link rel="stylesheet" href="assets/css/darkly.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Ship Scheduler</title>
+    <link rel="shortcut icon" href="https://vignette.wikia.nocookie.net/cowboybebop/images/6/64/Favicon.ico/revision/latest?cb=20090727013929">
+    <link rel='stylesheet' href='assets/css/darkly.css'>
 </head>
 
 <body>
 
-    <div class="container">
+    <div class='container'>
 
-        <div class="jumbotron text-center">
-            <h1 class="display-4">Super Space Trains</h1>
-            <p class="lead">A list of made-up trains for a made-up place!</p>
+        <div class='jumbotron text-center'>
+            <h1 class='display-4'>Space Ship Transit Log</h1>
+            <p class='lead'>See you later, Space Cowboy.</p>
         </div>
 
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="card">
-                    <div class="card-header">
-                        Current Train Schedule
+        <div class='row'>
+            <div class='col-sm-12'>
+                <div class='card'>
+                    <div class='card-header'>
+                        Current Ship Schedule
                     </div>
-                    <div class="card-body">
-                        <table class="table table-striped">
+                    <div class='card-body'>
+                        <table class='table table-striped'>
                             <thead>
                                 <tr>
-                                    <th scope="col">Train Name</th>
-                                    <th scope="col">Destination</th>
-                                    <th scope="col">Frequency (min)</th>
-                                    <th scope="col">Next Arrival</th>
-                                    <th scope="col">Minutes Away</th>
+                                    <th scope='col'>Ship Name</th>
+                                    <th scope='col'>Destination</th>
+                                    <th scope='col'>Frequency (min)</th>
+                                    <th scope='col'>Next Arrival</th>
+                                    <th scope='col'>Minutes Away</th>
                                 </tr>
                             </thead>
-                            <tbody id="schedule">
-                                <tr>
-                                    <td>test</td>
-                                    <td>test</td>
-                                    <td>test</td>
-                                    <td>test</td>
-                                    <td>test</td>
-                                </tr>
-                                <tr>
-                                    <td>test</td>
-                                    <td>test</td>
-                                    <td>test</td>
-                                    <td>test</td>
-                                    <td>test</td>
-                                </tr>
-                                <tr>
-                                    <td>test</td>
-                                    <td>test</td>
-                                    <td>test</td>
-                                    <td>test</td>
-                                    <td>test</td>
-                                </tr>
+                            <tbody id='schedule'>
+
                             </tbody>
                         </table>
                     </div>
@@ -65,31 +45,31 @@
             </div>
         </div>
 
-        <div class="row mt-4">
-            <div class="col-sm-12">
-                <div class="card">
-                    <div class="card-header">
+        <div class='row mt-4'>
+            <div class='col-sm-12'>
+                <div class='card'>
+                    <div class='card-header'>
                         Add a Train
                     </div>
-                    <div class="card-body">
+                    <div class='card-body'>
                         <form>
-                            <div class="form-group">
-                                <label for="nameInput">Train Name</label>
-                                <input type="text" class="form-control" id="nameInput" placeholder="Earth, Wind and Fire">
+                            <div class='form-group'>
+                                <label for='nameInput'>Ship Name</label>
+                                <input type='text' class='form-control' id='nameInput' placeholder='Zipcraft'>
                             </div>
-                            <div class="form-group">
-                                <label for="destinationInput">Destination</label>
-                                <input type="text" class="form-control" id="destinationInput" placeholder="Funky Town">
+                            <div class='form-group'>
+                                <label for='destinationInput'>Destination</label>
+                                <input type='text' class='form-control' id='destinationInput' placeholder='Earth'>
                             </div>
-                            <div class="form-group">
-                                <label for="firstInput">First Train Time (HH:mm - military time)</label>
-                                <input type="text" class="form-control" id="firstInput" placeholder="08:30">
+                            <div class='form-group'>
+                                <label for='firstInput'>First Ship Time (HH:mm - military time)</label>
+                                <input type='text' class='form-control' id='firstInput' placeholder='08:30'>
                             </div>
-                            <div class="form-group">
-                                <label for="freqInput">Frequency (min)</label>
-                                <input type="text" class="form-control" id="freqInput" placeholder="30">
+                            <div class='form-group'>
+                                <label for='freqInput'>Frequency (min)</label>
+                                <input type='text' class='form-control' id='freqInput' placeholder='30'>
                             </div>
-                            <button type="submit" class="btn btn-primary" id="sumbitBtn">Submit</button>
+                            <button type='submit' class='btn btn-primary' id='submitBtn'>Submit</button>
                         </form>
                     </div>
                 </div>
@@ -105,16 +85,16 @@
 
 
     <!-- Script block  -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
-    <script src="assets/javascript/app.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js'></script>
+    <script src='https://www.gstatic.com/firebasejs/5.3.1/firebase.js'></script>
+    <script src='https://code.jquery.com/jquery-3.3.1.js' integrity='sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=' crossorigin='anonymous'></script>
+    <script src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo'
+        crossorigin='anonymous'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js' integrity='sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49'
+        crossorigin='anonymous'></script>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js' integrity='sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy'
+        crossorigin='anonymous'></script>
+    <script src='assets/javascript/app.js'></script>
 </body>
 
 </html>
